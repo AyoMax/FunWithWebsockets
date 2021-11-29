@@ -1,0 +1,25 @@
+{
+  "name": "FunWithWebsockets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "santa_class.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyoMax/FunWithWebsockets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AyoMax/FunWithWebsockets/issues"
+  },
+  "homepage": "https://github.com/AyoMax/FunWithWebsockets#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.4.0"
+  }
+}
