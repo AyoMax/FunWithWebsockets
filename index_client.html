@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+  	<title>Client en  local</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script>
+      let socket = io('https://boiling-fortress-23587.herokuapp.com/');
+      let el;
+      socket.on('time', (timeString) => {
+        el = document.getElementById('server-time');
+        el.innerHTML = 'Server time: ' + timeString;
+      });
+      socket.on('santa', (santaString) => {
+        el = document.getElementById('santa-position');
+        el.innerHTML = 'Santa position: ' + santaString;
+      });
+    </script>
+  </head>
+  <body>
+    <p id="server-time"></p>
+    <p id="santa-position"></p>
+  </body>
+</html>

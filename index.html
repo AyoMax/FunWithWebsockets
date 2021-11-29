@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+  	<title>Where is Santa?</title>
+  </head>
+  <body>
+      <h1>Where is Santa? </h1>
+      <p>This server sends Santa's coordinates every seconds through a websocket, in a message called 'santa'.</p>
+
+      <p>Your goal is to
+        <ul>
+          <li>connect to the websocket with <a href="https://socket.io/">socketIO</a></li>
+          <li>catch messages called 'santa' ({'latitude':xx.xxx,'longitude':yy.yyy})</li>
+          <li>for each message, put Santa's coordinates on a map with the <a href="https://leafletjs.com/">Leaflet API</a>.</li>
+          <li>You can put Santa's house on the map by rougthly compute average latitude and longitude.</li>
+        </ul>
+      </p>
+
+      <p>Soon, you'll find that Santa is never to far from his house. Can you spot it? No? Why don't you use some help from <a href="https://ml5js.org/">Maching Learning</a> ?</p>
+
+      <p>By the way, this app is hosted on heroku. Find out <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">here</a> how I did it. Maybe you could create your own web service on a socket? UFO's appearances? Elvis spoting?</p>
+    
+  </body>
+</html>
