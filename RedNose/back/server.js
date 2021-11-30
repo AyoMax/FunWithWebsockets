@@ -1,7 +1,7 @@
 const express    = require('express');
 const path       = require('path');
 const Proxy      = require('http-proxy').createProxyServer();
-const config     = require(path.join(__dirname,"/global.json"));
+const config     = require(path.join(__dirname,"../../global.json"));
 const port       = config.Server.settings.port;
 const app        = express();
 
