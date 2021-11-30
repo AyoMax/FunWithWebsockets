@@ -5,7 +5,7 @@ const config     = require(path.join(__dirname,"../../global.json"));
 const port       = config.Server.settings.port;
 const app        = express();
 
-const ProxyServer= 'http://localhost:'+ config.Proxy.settings.port;
+const ProxyServer= 'https://fun-websockets.herokuapp.com:'+ config.Proxy.settings.port;
 
 /**
  * WebSocket Configuration
