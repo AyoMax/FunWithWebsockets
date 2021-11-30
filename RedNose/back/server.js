@@ -6,6 +6,7 @@ const port       = config.Server.settings.port;
 const app        = express();
 
 const ProxyServer= 'https://fun-websockets.herokuapp.com:'+ config.Proxy.settings.port;
+// const ProxyServer= 'http://localhost:'+ config.Proxy.settings.port;
 
 /**
  * WebSocket Configuration

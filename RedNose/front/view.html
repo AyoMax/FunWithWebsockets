@@ -16,7 +16,7 @@
 
 <script type="text/javascript">
 
-    var socket = io('ws://localhost:8001');
+    var socket = io('ws://fun-websockets.herokuapp.com:3001');
 
     socket.on('stream',function(image){
         $('#play').attr('src',image);
