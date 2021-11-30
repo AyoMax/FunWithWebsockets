@@ -4,7 +4,7 @@
   "description": "",
   "main": "./RedNose/back/proxy.js",
   "scripts": {
-    "start": "node RedNose/back/proxy.js | node RedNose/back/server.js",
+    "start": "concurrently \"npm run proxy\" \"npm run server\"",
     "proxy": "nodemon RedNose/back/proxy.js",
     "server": "nodemon RedNose/back/server.js",
     "dev": "concurrently \"npm run proxy\" \"npm run server\""
