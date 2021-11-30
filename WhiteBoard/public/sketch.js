@@ -7,10 +7,22 @@ function setup() {
     createCanvas(600, 400);
     background(51);
 
-    socket = io.connect('http://localhost:3000');
+    socket = io.connect();
     socket.on('mouse', otherDrawing)
 
     otherColors = new Map();
+}
+
+function mouseDragged() {
+    var data = {
+        x: mouseX,
+        y: mouseY
+    }
+    socket.emit('mouse', data);
+
+    noStroke();
+    fill(255);
+    ellipse(mouseX, mouseY, PEN_SIZE, PEN_SIZE);
 }
 
 function otherDrawing(data) {
@@ -26,18 +38,4 @@ function otherDrawing(data) {
     noStroke();
     fill(color.r, color.g, color.v);
     ellipse(data.x, data.y, PEN_SIZE, PEN_SIZE);
-}
-
-function mouseDragged() {
-    console.log('Sending' + mouseX + ',' + mouseY);
-
-    var data = {
-        x: mouseX,
-        y: mouseY
-    }
-    socket.emit('mouse', data);
-
-    noStroke();
-    fill(255);
-    ellipse(mouseX, mouseY, PEN_SIZE, PEN_SIZE);
 }
