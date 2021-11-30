@@ -22,4 +22,4 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(storage+'/index.html'));
 });
 
-app.listen(port, () => console.log(`Proxy listen to portt : `+port));
+app.listen(port, () => console.log(`Proxy listen to port : `+port));

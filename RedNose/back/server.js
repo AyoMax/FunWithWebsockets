@@ -1,11 +1,11 @@
-const express    = require('express');
-const path       = require('path');
-const Proxy      = require('http-proxy').createProxyServer();
-const config     = require(path.join(__dirname,"../../global.json"));
-const port       = config.Server.settings.port;
-const app        = express();
+const express = require('express');
+const path = require('path');
+const Proxy = require('http-proxy').createProxyServer();
+const config = require(path.join(__dirname, "../../global.json"));
+const port = config.Server.settings.port;
+const app = express();
 
-const ProxyServer= 'https://fun-websockets.herokuapp.com:'+ config.Proxy.settings.port;
+// const ProxyServer= 'https://' + req.get('host') + ':' + config.Proxy.settings.port;
 // const ProxyServer= 'http://localhost:'+ config.Proxy.settings.port;
 
 /**
@@ -30,13 +30,13 @@ const io = require('socket.io')(config.Server.settings.socket, {
     upgradeTimeout: 1000,
     allowUpgrades: true,
     cookie: 'ayomax_stream',
-    cookiePath:'/',
-    cookieHttpOnly:true
+    cookiePath: '/',
+    cookieHttpOnly: true
 });
 
-io.on('connection',function(socket){
-    socket.on('stream',function(data){
-        socket.broadcast.emit('stream',data);
+io.on('connection', function (socket) {
+    socket.on('stream', function (data) {
+        socket.broadcast.emit('stream', data);
     });
 });
 
@@ -48,8 +48,9 @@ io.of('/stream').clients((error, clients) => {
 /**
  * Run Proxy Server
  */
-app.all("/*", function(req, res) {
+app.all("/*", function (req, res) {
+    const ProxyServer = req.protocol + '://' + "localhost" + ':' + config.Proxy.settings.port;
     Proxy.web(req, res, {target: ProxyServer});
 });
 
-app.listen(port, () => console.log(`Listen to port : `+port));
+app.listen(port, () => console.log(`Listen to port : ` + port));
