@@ -22,11 +22,30 @@
     </nav>
     <div class="container">
         <div class="row">
+            <h1>Welcome !!!</h1>
+            <h2>Requirements</h2>
+            <div>
+                <p>
+                    To test this site you need :
+                </p>
+                <ol>
+                    <li class="list-item">A partner</li>
+                    <li class="list-item">To authorize the use of your webcam on this website</li>
+                </ol>
+            </div>
+            <h2>Instructions</h2>
+            <div>
+                <ol>
+                    <li>Give the website link to your partner</li>
+                    <li>When your partner is on the website, its username will appear on the users table</li>
+                    <li>Click on the "join" button next to its username to connect webcam.</li>
+                    <li>Abracadbra you can see it !</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-auto">
                 <div class="card">
-                    <div id="ownVideo" class="card-img-top">
-
-                    </div>
                     <div class="card-header">
                         <form>
                             <fieldset disabled>
@@ -38,14 +57,29 @@
                         </form>
                     </div>
                     <div class="card-body">
-                        <table class="table" id="userTable">
+                        <table class="table" id="otherTable">
+                            <thead>
+                            <tr>
+                                <th scope="col">Connected to :</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td id="otherUsername"></td>
+                                <td>
+                                    <button class="btn btn-danger" onclick="quitOther()">Disconnect</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="table" id="usersTable">
                             <thead>
                             <tr>
                                 <th scope="col">Username</th>
                                 <th scope="col">Actions</th>
                             </tr>
                             </thead>
-                            <tbody id="userTBody">
+                            <tbody>
                             </tbody>
                         </table>
                     </div>
