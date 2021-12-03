@@ -38,7 +38,8 @@ function setup() {
     /* Setup socket.io */
 
     // Open and connect socket - notice new port for socket.io!
-    socket = io.connect("http://localhost:3000");
+    // socket = io.connect("http://localhost:3000");
+    socket = io.connect();
 
     // Listen for socket connection confirmation
     socket.on('connection', data => {

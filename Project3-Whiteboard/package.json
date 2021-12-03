@@ -1,5 +1,5 @@
 {
-  "name": "project3-ai",
+  "name": "project3-whiteboard",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,10 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bufferutil": "^4.0.5",
     "express": "^4.17.1",
-    "socket.io": "^4.4.0",
-    "utf-8-validate": "^5.0.7",
-    "ws": "^8.3.0"
+    "socket.io": "^4.4.0"
   }
 }
