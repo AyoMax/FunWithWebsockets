@@ -1,17 +1,17 @@
-var express = require('express');
-var socket = require('socket.io');
+const express = require('express');
+const socket = require('socket.io');
 
-var app = express();
-var server = app.listen(process.env.PORT || 3000);
+const PORT = process.env.PORT || 3000;
 
-app.use(express.static('public'));
-console.log("Server running on port 3000");
-
+const app = express();
+const server = app
+    .use(express.static('public'))
+    .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 let alreadyConnect = {};
 let connections = [];
 
-var io = socket(server);
+const io = socket(server);
 io.sockets.on('connection', socket => {
     console.log('New connection : ' + socket.id);
 
@@ -34,6 +34,7 @@ io.sockets.on('connection', socket => {
         if (otherId) {
             delete connections[socket.id];
             delete connections[otherId];
+            alreadyConnect[otherId].reachable = true;
 
             socket.to(otherId).emit('quitOther');
         }
