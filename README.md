@@ -1,5 +1,7 @@
 # TP "Fun with WebSockets"
 
+Auteurs : BIDET Yoan, VILLATTE Maxime
+
 ## Sujet choisi
 
 LEVEL 3 : Create your own webSocket based service :
