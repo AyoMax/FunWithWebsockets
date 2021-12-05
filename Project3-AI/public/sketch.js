@@ -113,7 +113,7 @@ function draw() {
 
     let dOwn = dist(noseX, noseY, eyelX, eyelY);
 
-    fill(0, 255, 0);
+    fill(255, 0, 0);
     ellipse(noseX, noseY, dOwn);
 
     // Draw the image from socket on the canvas
